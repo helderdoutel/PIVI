@@ -67,7 +67,7 @@ def simular(total_elevadores=1):
                 e['passageiros'] = []
                 e['viagens'] += 1
                 if quebrar:
-                    print('quebrou')
+                    # print('quebrou')
                     e['quebrado_hora'] = hora_inicio
                 # print('partiu %s' % hora_inicio.strftime("%Y-%m-%d %H:%M"))
             elif len(e['passageiros']) == 10 and not(e['quebrado_hora']):
@@ -78,7 +78,7 @@ def simular(total_elevadores=1):
                 e['passageiros'] = []
                 e['viagens'] += 1
                 if quebrar:
-                    print('quebrou')
+                    # print('quebrou')
                     e['quebrado_hora'] = hora_inicio
                 # print('partiu %s' % hora_inicio.strftime("%Y-%m-%d %H:%M"))
             indice += 1
@@ -102,7 +102,9 @@ def simular(total_elevadores=1):
     tempo_espera = str(tempo_espera).split(':')
     print('Tempo de espera: %s horas, %s minutos, %s segundos' %
           (tempo_espera[0], tempo_espera[1], tempo_espera[2]))
-    print([x['viagens'] for x in elevadores])
-ne = input('Quantos elevadores?\n')
-for x in range(10):
-    simular(int(ne))
+    # print([x['viagens'] for x in elevadores])
+ne = input('Até quantos elevadores?\n')
+for y in range(1, int(ne) + 1):
+    print('Elevadores %s' % (y)) 
+    for x in range(10):
+        simular(int(y))
